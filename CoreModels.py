@@ -104,8 +104,8 @@ class JHotkey(QThread):
             ocr = self.settings.value('hotkey_ocr', "alt<+>x", type=str)
             rc = self.settings.value('hotkey_rc', "alt<+>c", type=str)
             rcs = self.settings.value('hotkey_rcs', "ctrl<+>alt<+>c", type=str)
-            a1 = self.settings.value('hotkey_a1', "alt<+>1", type=str)
-            a2 = self.settings.value('hotkey_a2', "alt<+>2", type=str)
+            a1 = self.settings.value('hotkey_a1', "alt<+>9", type=str)
+            a2 = self.settings.value('hotkey_a2', "alt<+>0", type=str)
         return ["ss","ocr","rc","rcs","a1","a2"],[ss,ocr,rc,rcs,a1,a2]
     def set_hotkeys(self,keys):
         names = ["hotkey_ss",'hotkey_ocr','hotkey_rc',"hotkey_rcs",'hotkey_a1','hotkey_a2']
@@ -1669,14 +1669,14 @@ class JamToolsWindow(QMainWindow):
             # controlbox.setStyleSheet('background-color:rgb(250, 250, 250);')
             reccontrol_tap.addTab(recordbox, '录制动作')
             reccontrol_tap.addTab(controlbox, '播放动作')
-            self.controlrecord = QPushButton("录制/结束\n(Alt+1)", recordbox)
-            self.controlrecord.setToolTip('快捷键Alt+1;开始/结束记录你的所有动作')
-            self.controlrecord.setStatusTip('快捷键Alt+1;开始/结束记录你的所有动作')
+            self.controlrecord = QPushButton("录制/结束\n(Alt+9)", recordbox)
+            self.controlrecord.setToolTip('快捷键Alt+9;开始/结束记录你的所有动作')
+            self.controlrecord.setStatusTip('快捷键Alt+9;开始/结束记录你的所有动作')
             self.controlrecord.setGeometry(10, 15, 110, 50)
             self.controlrecord.clicked.connect(self.start_action_listen)
-            self.controlrun = QPushButton("播放/结束\n(Alt+2)(F4)", controlbox)
-            self.controlrun.setToolTip('快捷键Alt+2;播放已录制的动作,F4强制中断播放')
-            self.controlrun.setStatusTip('快捷键Alt+2;播放已录制的动作,F4强制中断播放')
+            self.controlrun = QPushButton("播放/结束\n(Alt+0)(F4)", controlbox)
+            self.controlrun.setToolTip('快捷键Alt+0;播放已录制的动作,F4强制中断播放')
+            self.controlrun.setStatusTip('快捷键Alt+0;播放已录制的动作,F4强制中断播放')
             self.controlrun.setGeometry(10, 150, 110, 50)
             self.controlrun.clicked.connect(self.start_action_run)
 
