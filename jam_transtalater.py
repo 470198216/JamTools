@@ -42,7 +42,7 @@ class Translator(QObject):
     def get_available_langs(self,engine="YouDao"):
         return list(self.translate_engine_info[engine].keys())
     
-    def translate(self,text,from_lang = '自动检测',to_lang = "中文",engine = "YouDao"):
+    def translate(self,text,from_lang = '自动检测',to_lang = "中文",engine = "BaiDu"):
         pl={"YouDao":self.Youdaotra,
             "BaiDu":self.Bdtra}
         if engine in pl:
